@@ -1,0 +1,8 @@
+Change-Id: Ia5e6896c756556ad94c931bc2377f53199925fff
+Code-Review+2: Alexander Kanevskiy
+Verified+1: Alexander Kanevskiy
+Submitted-by: Alexander Kanevskiy
+Submitted-at: Thu, 27 Jun 2013 09:27:48 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4162
+Project: scm/meta/build-config
+Branch: refs/heads/tizen_2.1
