@@ -28,6 +28,10 @@
   <repository name="ia32-wayland">
     <arch>i586</arch>
   </repository>
+  <repository name="emulator32-wayland">
+    <path project="Tizen:Common" repository="ia32-wayland"/>
+    <arch>i586</arch>
+  </repository>
   <repository name="arm64-wayland">
     <path project="devel:arm_toolchain:Mobile:Main" repository="aarch"/>
     <path project="devel:arm_toolchain:Mobile:Base" repository="aarch"/>
