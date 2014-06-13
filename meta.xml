@@ -32,9 +32,6 @@
     <arch>i586</arch>
   </repository>
   <repository name="arm64-wayland">
-    <path project="devel:arm_toolchain:Mobile:Main" repository="aarch"/>
-    <path project="devel:arm_toolchain:Mobile:Base" repository="aarch"/>
-    <path project="devel:arm64binary:Mobile" repository="arm"/>
     <arch>aarch64</arch>
   </repository>
   <repository name="arm-wayland">
