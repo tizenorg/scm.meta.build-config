@@ -1,0 +1,22 @@
+#!/bin/bash
+
+project="Tizen:IVI"
+default_target="atom"
+osc_cmd="osc -A https://api.tizen.org"
+
+targets=`$osc_cmd repos Tizen:Common|awk '{print $1}'|sort |uniq`
+
+echo "downloading build configs ..."
+for target in $targets
+do
+    $osc_cmd buildconfig $project $target >build-${target}.conf
+done
+
+
+# get project meta file
+echo "downloading project meta file"
+$osc_cmd meta prj $project >meta.xml
+
+# set default build config
+rm -f build.conf
+ln -sf build-${default_target}.conf build.conf
