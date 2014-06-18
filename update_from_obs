@@ -1,17 +1,22 @@
 #!/bin/bash
 
-function downloadto() {
-	output=$1
-	shift
+project="Tizen:Common"
+default_target="ia32-wayland"
+osc_cmd="osc -A https://api.tizen.org"
 
-	if "$@" >${output}.tmp; then
-		mv ${output}.tmp ${output}
-		echo "$output updated successfully"
-	else
-		rm ${output}.tmp
-		echo "Updating $output failed."
-	fi
-}
+targets=`$osc_cmd repos Tizen:Common|awk '{print $1}'|sort |uniq`
 
-downloadto build.conf osc -A https://api.tizen.org meta prjconf Tizen:Common 
-downloadto meta.xml osc -A https://api.tizen.org meta prj Tizen:Common 
+echo "downloading build configs ..."
+for target in $targets
+do
+    $osc_cmd buildconfig $project $target >build-${target}.conf
+done
+
+
+# get project meta file
+echo "downloading project meta file"
+$osc_cmd meta prj $project >meta.xml
+
+# set default build config
+rm -f build.conf
+ln -sf build-${default_target}.conf build.conf

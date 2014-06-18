@@ -11,6 +11,7 @@
     <disable arch="i586" repository="arm-wayland"/>
     <disable arch="x86_64" repository="arm-wayland"/>
     <disable arch="i586" repository="x86_64-wayland"/>
+    <enable/>
   </build>
   <publish>
     <disable arch="aarch64" repository="arm64-wayland"/>
