@@ -1,0 +1,9 @@
+Code-Review+2: Qiang Zhang <qiang.z.zhang@intel.com>
+Verified+1: Qiang Zhang <qiang.z.zhang@intel.com>
+Code-Review+1: Li Jinjing
+Verified+1: Li Jinjing
+Submitted-by: Qiang Zhang <qiang.z.zhang@intel.com>
+Submitted-at: Tue, 01 Jul 2014 20:22:47 -0700
+Reviewed-on: https://review.tizen.org/gerrit/23709
+Project: scm/meta/build-config
+Branch: refs/heads/tizen_ivi
