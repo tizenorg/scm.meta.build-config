@@ -6,17 +6,25 @@ osc_cmd="osc -A https://api.tizen.org"
 
 targets=`$osc_cmd repos $project|awk '{print $1}'|sort |uniq`
 
+echo "removing all files except for myself"
+rm -rf `ls|grep -v update_from_obs`
+git add -u
+
 echo "downloading build configs ..."
 for target in $targets
 do
     $osc_cmd buildconfig $project $target >build-${target}.conf
+    git add build-${target}.conf
 done
-
 
 # get project meta file
 echo "downloading project meta file"
 $osc_cmd meta prj $project >meta.xml
-
+git add meta.xml
 # set default build config
 rm -f build.conf
 ln -sf build-${default_target}.conf build.conf
+git add build.conf
+
+echo "All local changes have been added to stage area, please commit the changes
+and submit patch"
