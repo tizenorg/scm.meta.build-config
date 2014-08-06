@@ -6,8 +6,8 @@ osc_cmd="osc -A https://api.tizen.org"
 
 targets=`$osc_cmd repos Tizen:Common|awk '{print $1}'|sort |uniq`
 
-echo "removing all files except for myself"""
-rm -rf `ls|grep -v update_from_obs`
+echo "removing all git tracked files except for myself"
+git ls-files|grep -v update_from_obs |xargs rm -f
 git add -u
 
 echo "downloading build configs ..."
