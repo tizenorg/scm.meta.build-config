@@ -6,17 +6,30 @@ osc_cmd="osc -A https://api.tizen.org"
 
 targets=`$osc_cmd repos $project|awk '{print $1}'|sort |uniq`
 
+echo "removing all git tracked files except for myself"
+git ls-files|grep -v update_from_obs |xargs rm -f
+git add -u
+
 echo "downloading build configs ..."
 for target in $targets
 do
     $osc_cmd buildconfig $project $target >build-${target}.conf
+    git add build-${target}.conf
 done
-
 
 # get project meta file
 echo "downloading project meta file"
 $osc_cmd meta prj $project >meta.xml
-
+git add meta.xml
 # set default build config
 rm -f build.conf
 ln -sf build-${default_target}.conf build.conf
+git add build.conf
+
+git commit -m "Update from OBS at `date +\"%Y-%m-%d %H:%M:%S\"`"  >/dev/null
+if [ $? -eq 0 ]; then
+  echo "all local changes commit locally"
+  echo "please review it with 'git show' and submit it with 'git push'"
+else
+  echo "no changes needed to be updated"
+fi
