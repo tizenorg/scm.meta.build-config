@@ -2,31 +2,37 @@
   <title>Tizen:Common build for generic CPUs and devices.</title>
   <description>See https://wiki.tizen.org/wiki/Common</description>
   <person userid="marquiz" role="maintainer"/>
-  <person userid="jang798" role="maintainer"/>
   <person userid="ronan" role="maintainer"/>
   <person userid="sdx" role="maintainer"/>
-  <person userid="jobol" role="maintainer"/>
-  <person userid="ds23jung" role="maintainer"/>
   <person userid="sdx" role="bugowner"/>
+  <person userid="jobol" role="maintainer"/>
   <build>
-    <disable arch="aarch64" repository="arm64-wayland"/>
     <disable arch="i586" repository="arm-wayland"/>
     <disable arch="x86_64" repository="arm-wayland"/>
+    <disable arch="i586" repository="x86_64-wayland"/>
+    <disable repository="arm64-wayland"/>
+    <disable arch="i586" repository="x86_64-x11"/>
     <disable arch="i586" repository="arm-x11"/>
     <disable arch="x86_64" repository="arm-x11"/>
-    <disable arch="i586" repository="x86_64-wayland"/>
   </build>
   <publish>
-    <disable arch="aarch64" repository="arm64-wayland"/>
+    <disable repository="arm64-wayland"/>
   </publish>
   <debuginfo>
     <enable/>
   </debuginfo>
   <useforbuild>
-    <disable arch="aarch64" repository="arm64-wayland"/>
+    <disable repository="arm64-wayland"/>
   </useforbuild>
+  <repository name="x86_64-x11">
+    <arch>x86_64</arch>
+    <arch>i586</arch>
+  </repository>
   <repository name="x86_64-wayland">
     <arch>x86_64</arch>
+    <arch>i586</arch>
+  </repository>
+  <repository name="ia32-x11">
     <arch>i586</arch>
   </repository>
   <repository name="ia32-wayland">
@@ -39,7 +45,6 @@
     <arch>aarch64</arch>
   </repository>
   <repository name="arm-x11">
-    <path project="Tizen:Common" repository="arm-wayland"/>
     <arch>armv7l</arch>
     <arch>i586</arch>
     <arch>x86_64</arch>
