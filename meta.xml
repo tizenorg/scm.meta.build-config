@@ -8,10 +8,15 @@
   <person userid="sdx" role="maintainer"/>
   <build>
     <disable arch="i586" repository="arm"/>
+    <disable arch="x86_64" repository="arm"/>
+    <disable arch="i586" repository="x86_64"/>
   </build>
   <debuginfo>
     <enable/>
   </debuginfo>
+  <repository name="x86_64">
+    <arch>x86_64</arch>
+  </repository>
   <repository name="emulator">
     <arch>i586</arch>
   </repository>
