@@ -1,0 +1,33 @@
+<project name="Tizen:Mobile">
+  <title>Tizen Mobile</title>
+  <description>Mobile variation of Tizen</description>
+  <person userid="marquiz" role="maintainer"/>
+  <person userid="bartosh" role="maintainer"/>
+  <person userid="kad" role="maintainer"/>
+  <person userid="jang798" role="maintainer"/>
+  <person userid="sehong" role="maintainer"/>
+  <person userid="hyungu" role="maintainer"/>
+  <person userid="jongwoochae" role="maintainer"/>
+  <person userid="ds23jung" role="maintainer"/>
+  <person userid="joonsub1" role="maintainer"/>
+  <person userid="alone" role="maintainer"/>
+  <build>
+    <disable arch="i586" repository="arm-x11"/>
+    <disable arch="i586" repository="arm64-x11"/>
+  </build>
+  <debuginfo>
+    <enable/>
+  </debuginfo>
+  <repository name="atom-x11">
+    <arch>i586</arch>
+  </repository>
+  <repository name="arm64-x11">
+    <path project="Tizen:Common" repository="arm64-x11"/>
+    <arch>aarch64</arch>
+    <arch>i586</arch>
+  </repository>
+  <repository name="arm-x11">
+    <arch>armv7l</arch>
+    <arch>i586</arch>
+  </repository>
+</project>
