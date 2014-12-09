@@ -22,7 +22,6 @@
     <arch>i586</arch>
   </repository>
   <repository name="arm64-x11">
-    <path project="Tizen:Common" repository="arm64-x11"/>
     <arch>aarch64</arch>
     <arch>i586</arch>
   </repository>
