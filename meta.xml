@@ -1,0 +1,15 @@
+<project name="Tizen:2.3:Mobile">
+  <title>Tizen:2.3:Mobile</title>
+  <description/>
+  <person userid="jang798" role="maintainer"/>
+  <person userid="jang798" role="bugowner"/>
+  <person userid="mavesec" role="maintainer"/>
+  <repository name="target">
+    <path project="Tizen:2.3:Mobile" repository="emulator"/>
+    <arch>armv7l</arch>
+    <arch>i586</arch>
+  </repository>
+  <repository name="emulator">
+    <arch>i586</arch>
+  </repository>
+</project>
