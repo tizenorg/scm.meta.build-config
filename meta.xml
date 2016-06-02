@@ -1,0 +1,25 @@
+<project name="Tizen:2.4:Mobile">
+  <title>Tizen:2.4:Mobile</title>
+  <description/>
+  <person userid="joonsub1" role="maintainer"/>
+  <person userid="alone" role="maintainer"/>
+  <person userid="alone" role="bugowner"/>
+  <person userid="hglee" role="maintainer"/>
+  <person userid="junhyeonlee" role="maintainer"/>
+  <person userid="tcshin93" role="maintainer"/>
+  <build>
+    <disable arch="i586" repository="target-TM1"/>
+  </build>
+  <debuginfo>
+    <enable/>
+  </debuginfo>
+  <repository name="target-TM1">
+    <path project="Tizen:2.4:Base" repository="standard"/>
+    <arch>armv7l</arch>
+    <arch>i586</arch>
+  </repository>
+  <repository name="emulator">
+    <path project="Tizen:2.4:Base" repository="emulator"/>
+    <arch>i586</arch>
+  </repository>
+</project>
